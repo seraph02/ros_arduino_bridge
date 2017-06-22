@@ -1,0 +1,27 @@
+# A UDEV rule maps the Arduino serial number to /dev/arduino
+
+port: /dev/ttyACM0
+baud: 57600
+timeout: 0.5
+
+rate: 30
+
+sensorstate_rate: 10
+use_base_controller: False
+joint_update_rate: 10
+
+
+sensors: {
+  onboard_led: {pin: 13, type: Digital, direction: output, rate: 1}
+}
+
+# Joint name and pin assignment is an example only
+joints: {
+    body_to_left_shoulder_joint: {pin: 3, init_position: 0, init_speed: 60, neutral: 90, min_position: -90, max_position: 90, invert: False, continuous: False},
+    shoulder_stevo_lift_to_axis: {pin: 4, init_position: 0, init_speed: 60, neutral: 90, min_position: -90, max_position: 90, invert: False, continuous: False},
+    big_arm_up_to_axis: {pin: 5, init_position: 0, init_speed: 60, neutral: 90, min_position: -90, max_position: 90, invert: False, continuous: False},
+    small_arm_up_to_axis: {pin: 6, init_position: 0, init_speed: 60, neutral: 90, min_position: -90, max_position: 90, invert: False, continuous: False},
+    wrist_run_stevo_to_axis: {pin: 7, init_position: 0, init_speed: 60, neutral: 90, min_position: -90, max_position: 90, invert: False, continuous: False},
+    hand_run_stevo_to_hand_run_stevo_axis: {pin: 8, init_position: 0, init_speed: 60, neutral: 90, min_position: -90, max_position: 90, invert: False, continuous: False}
+    #,shoulder_stevo_lift_to_axis: {pin: 9, init_position: 0, init_speed: 60, neutral: 90, min_position: -90, max_position: 90, invert: False, continuous: False} 
+}
